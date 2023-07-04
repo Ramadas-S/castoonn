@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
     path('', views.index, name='index'),
 
-    ################################ creat
+    ################################ register
+    path('register/',views.register,name='register'),
     
     ]

@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    body{
+   
+    background-image: url({% static 'img\bbb.jpg' %});
+    background-position: center;
+    background-size:cover;
+    padding: 0.8%;
+    position:relative;
+}
+
+.registration-form{
+    margin-top: 50px;
+	padding: 50px 0;
+  
+   
+}
+
+.registration-form form{
+    background: linear-gradient(-45deg,#c21b98, #8a126c);
+    opacity:0.7;
+    max-width: 498px;
+    height: 610px;
+    margin: auto;
+    padding: 50px 70px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.registration-form .item{
+	border-radius: 20px;
+    margin-bottom:20px;
+    padding:7px 20px;
+}
+
+.registration-form .create-account{
+    border-radius:10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #5791ff;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+.confirm-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+    }
+.demo1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom:5px;
+}
+    .fontuser {
+        position: relative;
+
+    }
+    .fontuser i{
+        position: absolute;
+        left: 15px;
+        top: 16px;
+
+    }
+
+    .h3-size {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.center-text {
+  text-align: center;
+}
+ 
+
+@media (max-width: 576px) {
+    .registration-form form{
+        padding: 50px 20px;
+    }
+
+    .registration-form .form-icon{
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        line-height: 70px;
+    }
+   
+}
+
+h3{
+    color: #fff;
+}
+h5 {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    font-family:'Open Sans', sans-serif;
+    margin:-50px;
+    margin-right:200px;
+    margin-top: 25px;
+    color: rgb(255, 255, 255);
+    
+}
+h1{
+    color: rgb(255, 255, 255);
+}
+.first{
+    margin-bottom: -80px;
+}
+
+
+
+    </style>
+    <script>
+        $(document).ready(function(){
+    $('#birth-date').mask('00/00/0000');
+    $('#phone-number').mask('0000-0000');
+   })
+    </script>
+</head>
+<body>
+
+    <h1><center>CASTOONN</center></h1>
+    <div class="first">
+        <center>
+        <h5>Register as</h5>	
+        <select class="item" style="border-radius: 40px;padding:5px 0px; padding-right:70px; opacity:0.7; "  id="Gender" placeholder="Gender">
+            <option value="Enable">Creator</option>
+            <option value="Disable">Artist</option>
+        </select>
+        </center>  
+    </div>
+    <div class="registration-form">        
+            <form>
+                <h3>Creator</h3>
+                <div class="form-group demo1">
+                    <input type="text" class="form-control item" id="name" placeholder="Username">
+                    <input type="text" class="form-control item" id="lastname" placeholder="lastname">
+                
+                </div>
+                <div class="form-group demo1">
+                    <input type="text" class="form-control item" id="nickname" placeholder="nickname">
+            
+                    <select class="form-control item"  id="Gender" placeholder="Gender">
+                        <option value="Gender">Gender</option>
+                        <option value="Enable">Female</option>
+                        <option value="Disable">Male</option>
+                    </select>
+
+                </div>
+                
+                <div class="form-group demo1">
+
+                    <input type="date" id="birthday" class="form-control item" name="birthday">
+                    
+                    <input type="text" class="form-control item" id="phone number" placeholder="phone number">
+                    
+                    
+                </div>
+
+                <div class="form-group fontuser">
+                    <input type="text" class="form-control item" id="otp" placeholder="OTP">
+                    <input type="text" class="form-control item" id="Email" placeholder="Email">
+                    <input type="text" class="form-control item" id="Email OTP" placeholder="Email OTP">
+
+                    <select class="form-control item" id="profession" placeholder="Profession">
+                        <option value="profession">Profession</option>
+                        <option value="actor">Actor</option>
+                        <option value="coutume designer">Costume Designer</option>
+                    </select>
+
+                    <input type="text" class="form-control item" id="experience" placeholder="Experience">
+                </div> 
+            </form>
+        </div>
+
+    <div class="submit-form">
+        
+        <form>
+            <div class="form-group sub1">
+                <center>
+                <button type="button" style="border-radius: 10px;padding:10px ;  opacity: 0.9;; color: #fff; background-color: #c21b98;">Create Account</button> 
+                <center>
+    
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -11,15 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body{
-    background-color: #dee9ff;
+    background-image: url({% static 'img\daniel-monteiro-uGVqeh27EHE-unsplash.jpg' %});
+    background-repeat:repeat;
+    background-size:contain;
 }
 
 .registration-form{
+    margin-top: 50px;
 	padding: 50px 0;
+   
 }
 
 .registration-form form{
-    background-color: #fff;
+    background: linear-gradient(-45deg,#c21b98, #8a126c);
+    opacity:0.7;
     max-width: 400px;
     margin: auto;
     padding: 50px 70px;
@@ -118,8 +123,8 @@
             </div>
             
             <div class="confirm-button">
-                <button type="button" class="btn btn-block create-account">Cancel</button>
-                <button type="button" class="btn btn-block create-account">confirm</button>
+                <button type="button" style="color: #c21b98; background-color: black;"  class="btn btn-block create-account">Cancel</button>
+                <button type="button" style="color: black; background-color: white"; class="btn btn-block create-account">confirm</button>
             </div>
         </form>
     </div>

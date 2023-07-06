@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <title>Creator Registration Details</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,7 +23,6 @@
     margin-top: 50px;
 	padding: 50px 0;
   
-   
 }
 
 .registration-form form{
@@ -140,67 +139,89 @@ h1{
     <div class="first">
         <center>
         <h5>Register as</h5>	
-        <select class="item" style="border-radius: 40px;padding:5px 0px; padding-right:70px; opacity:0.7; "  id="Gender" placeholder="Gender">
-            <option value="Enable">Creator</option>
-            <option value="Disable">Artist</option>
+        <select class="item" name='my_option' style="border-radius: 40px;padding:5px 0px; padding-right:70px; opacity:0.7; "  id="Gender" placeholder="Gender">
+            <option href="#" value="creator">Creator</option>
+            <option href="#" value="artist">Artist</option>
         </select>
         </center>  
     </div>
     <div class="registration-form">        
-            <form>
+            <form method="post" action="{% url 'reg_details' %}">
+                {% csrf_token %}
+
+                {% if form.errors %}
+                <ul class="errorlist">
+                  {% for field_errors in form.errors.values %}
+                    {% for error in field_errors %}
+                      <li>{{ error }}</li>
+                    {% endfor %}
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
                 <h3>Creator</h3>
                 <div class="form-group demo1">
-                    <input type="text" class="form-control item" id="name" placeholder="Username">
-                    <input type="text" class="form-control item" id="lastname" placeholder="lastname">
+                    {% comment %} <input type="text" class="form-control item" id="name" placeholder="Name">
+                    <input type="text" class="form-control item" id="lastname" placeholder="Lastname"> {% endcomment %}
+                    {{form.name}}
+                    {{form.lastname}}
                 
                 </div>
                 <div class="form-group demo1">
-                    <input type="text" class="form-control item" id="nickname" placeholder="nickname">
+                    {% comment %} <input type="text" class="form-control item" id="nickname" placeholder="nickname">
             
                     <select class="form-control item"  id="Gender" placeholder="Gender">
                         <option value="Gender">Gender</option>
                         <option value="Enable">Female</option>
                         <option value="Disable">Male</option>
-                    </select>
+                    </select>  {% endcomment %}
+
+                    {{form.nickname}}
+                    {{form.gender}}
 
                 </div>
                 
                 <div class="form-group demo1">
-
-                    <input type="date" id="birthday" class="form-control item" name="birthday">
+                   
+                    {% comment %} <input type="date" id="birthday" class="form-control item" name="birthday">
                     
-                    <input type="text" class="form-control item" id="phone number" placeholder="phone number">
+                    <input type="text" class="form-control item" id="phone number" placeholder="phone number"> {% endcomment %}
+
+                    {% comment %} {{form.date_of_birth}} {% endcomment %}
+                    
+                    {{form.date_of_birth}}
+                    {{form.phone_number}}
                     
                     
                 </div>
 
                 <div class="form-group fontuser">
-                    <input type="text" class="form-control item" id="otp" placeholder="OTP">
+                    {% comment %} <input type="text" class="form-control item" id="otp" placeholder="OTP">
                     <input type="text" class="form-control item" id="Email" placeholder="Email">
-                    <input type="text" class="form-control item" id="Email OTP" placeholder="Email OTP">
-
-                    <select class="form-control item" id="profession" placeholder="Profession">
+                    <input type="text" class="form-control item" id="Email OTP" placeholder="Email OTP"> {% endcomment %}
+                    {{form.email}}
+                    {% comment %} <select class="form-control item" id="profession" placeholder="Profession">
                         <option value="profession">Profession</option>
                         <option value="actor">Actor</option>
                         <option value="coutume designer">Costume Designer</option>
-                    </select>
+                    </select>  {% endcomment %}
 
-                    <input type="text" class="form-control item" id="experience" placeholder="Experience">
+                    {{form.profession}}
+
+                    {% comment %} <input type="text" class="form-control item" id="experience" placeholder="Experience"> {% endcomment %}
+                    {{form.experience}}
                 </div> 
+
+                <div class="form-group sub1">
+                    <center>
+                    <button type="submit" style="border-radius: 10px;padding:10px ;  opacity: 0.9;; color: #fff; background-color: #c21b98;">Create Account</button> 
+                    <center>
+        
+                </div>
+
             </form>
         </div>
 
-    <div class="submit-form">
-        
-        <form>
-            <div class="form-group sub1">
-                <center>
-                <button type="button" style="border-radius: 10px;padding:10px ;  opacity: 0.9;; color: #fff; background-color: #c21b98;">Create Account</button> 
-                <center>
-    
-            </div>
-        </form>
-    </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
